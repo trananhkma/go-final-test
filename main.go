@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
-	"go-final-test/app"
+	"go-final-test/crawler"
 	"net/http"
 	"strings"
 )
@@ -18,10 +18,8 @@ type Target interface {
 func getTarget(url string) interface{} {
 	if strings.Contains(url, "https://thanhnien.vn") {
 		return crawler.ThanhNien{}
-	}
-    
+	} 
     return crawler.DanTri{}
-
 }
 
 func Crawler() {
