@@ -18,8 +18,8 @@ type Target interface {
 func getTarget(url string) interface{} {
 	if strings.Contains(url, "https://thanhnien.vn") {
 		return crawler.ThanhNien{}
-	} 
-    return crawler.DanTri{}
+	}
+	return crawler.DanTri{}
 }
 
 func Crawler() {
