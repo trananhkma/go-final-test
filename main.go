@@ -9,21 +9,19 @@ import (
 )
 
 type Target interface {
-	GetTitle() string
-	GetDescription() string
-	GetBody() string
-	GetTime() string
+	GetTitle(*goquery.Document) string
+	GetDescription(*goquery.Document) string
+	GetBody(*goquery.Document) string
+	GetTime(*goquery.Document) string
 }
 
-func getTarget(url string) Target {
-	var target struct{}
+func getTarget(url string) interface{} {
 	if strings.Contains(url, "https://thanhnien.vn") {
-		target = crawler.ThanhNien{}
-	} else {
-		target = crawler.DanTri{}
+		return crawler.ThanhNien{}
 	}
+    
+    return crawler.DanTri{}
 
-	return target
 }
 
 func Crawler() {
