@@ -6,8 +6,12 @@ Mục đích là lấy dữ liệu từ dantri.com.vn và thanhnien.vn
 
 ## Sử dụng
 1. Chạy server
-
-    go run main.go
+    
+    `$ cd go-final-test`
+    
+    `$ go get -d ./...`
+    
+    `$ go run main.go`
 
 2. Mở trình duyệt web, điền url có dạng
   
